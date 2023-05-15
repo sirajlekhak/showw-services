@@ -1,32 +1,96 @@
-.App {
+
+body{
+  background-color: #101011;
   text-align: center;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* Welcome to showwcase services start */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h3{
+  color: wheat;
+  
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App-link {
+  color: #61dafb;
+}
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+a {
+  display: inline-block;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
+
+.google-btn {
+  background-color: #DB4437;
+}
+
+.github-btn {
+  background-color: #333;
+}
+
+.twitter-btn {
+  background-color: #1DA1F2;
+}
+
+i {
+  margin-right: 10px;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+/* Welcome to showwcase services end */
+
+/* NAV START */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  overflow-x: hidden;
+  padding-top: calc(200px)
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 30px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* side nav end */
+
 
 @keyframes App-logo-spin {
   from {
