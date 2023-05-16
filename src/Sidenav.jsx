@@ -11,7 +11,7 @@ function Sidenav() {
         <a className="text-col" href="/">Showwcase Services</a>
       </div>
       
-      <Link to="/discover">Discover</Link>
+      <Link to="/DiscoverPage">Discover</Link>
       <Link to="/YourServices">Your Services</Link>
     </div>
   );
