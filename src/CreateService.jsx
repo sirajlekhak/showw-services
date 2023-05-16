@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import TagsInput from "react-tagsinput";
+import "react-tagsinput/react-tagsinput.css";
 
 function CreateService({ onClick }) {
   const [showForm, setShowForm] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [skills, setSkills] = useState("");
+  const [skills, setSkills] = useState([]);
   const [price, setPrice] = useState("");
-  const [skillTags, setSkillTags] = useState([]);
 
   const handleCreateService = () => {
     // Logic for creating a service goes here
@@ -20,24 +21,10 @@ function CreateService({ onClick }) {
     // Reset form fields
     setTitle("");
     setDescription("");
-    setSkills("");
+    setSkills([]);
     setPrice("");
     // Close the form
     setShowForm(false);
-  };
-
-  const handleSkillsChange = (e) => {
-    const { value } = e.target;
-    setSkills(value);
-
-    // Update skillTags based on comma-separated input value
-    const tags = value.split(",").map((tag) => tag.trim());
-    setSkillTags(tags);
-  };
-
-  const removeSkillTag = (tag) => {
-    const updatedTags = skillTags.filter((t) => t !== tag);
-    setSkillTags(updatedTags);
   };
 
   return (
@@ -71,30 +58,17 @@ function CreateService({ onClick }) {
             className="form-input"
             placeholder="Provide a detailed description of your service"
           ></textarea>
-
-          <label htmlFor="skills">Skills:</label>
-          <div className="skill-tags">
-            {skillTags.map((tag, index) => (
-              <div key={index} className="skill-tag">
-                {tag}
-                <button
-                  type="button"
-                  onClick={() => removeSkillTag(tag)}
-                  className="remove-tag-button"
-                >
-                  &times;
-                </button>
-              </div>
-            ))}
-          </div>
-          <input
-            type="text"
-            id="skills"
+          
+          <label htmlFor="skillS">Skills:</label>
+          <TagsInput
             value={skills}
-            onChange={handleSkillsChange}
-            className="form-input"
-            placeholder="Enter skills separated by commas"
+            onChange={(newSkills) => setSkills(newSkills)}
+            className="tags-input-container"
+            tagClassName="tag"
+            removeButtonClassName="tag-remove-button"
+            inputProps={{ placeholder: "Enter skills separated by commas" }}
           />
+
           <label htmlFor="price">Price:</label>
           <input
             type="number"
@@ -113,4 +87,5 @@ function CreateService({ onClick }) {
     </div>
   );
 }
+
 export default CreateService;
