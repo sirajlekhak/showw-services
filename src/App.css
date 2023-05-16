@@ -253,16 +253,52 @@ a:hover {
 
 /* FORM END */
 
-h2 {
-  margin-top: 20px;
-  color: #fff;
+/* CREATED USER START*/
+
+.created-user {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  margin-top: 1rem;
+  border-radius: 10px;
 }
-p{
-  margin-top: 20px;
+
+.created-user h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.created-user p {
+  margin: 0.5rem 0;
+}
+
+.edit-button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  background-color: #00bfff;
   color: #fff;
 }
 
 
+/* CREATED USER END */
+
+
+/* EDIT DETAILS OF THE USER */
+
+.modal{
+  border: 1px solid #ccc;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  margin-top: 1rem;
+  border-radius: 10px;
+}
+
+
+
+/* EDIT DETAILS OF THE USER */
 @keyframes neon-glow {
   0% {
     box-shadow: 0 0 5px #00ff4c;
