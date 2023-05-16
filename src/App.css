@@ -58,20 +58,22 @@ a:hover {
 /* NAV START */
 .sidenav {
   height: 100%;
-  width: 200px;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
   background-color: #000000;
   overflow-x: hidden;
-  padding-top: calc(200px)
+  
+}
+.sidenav .text-col{
+  color: #f1f1f1;
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 30px;
+  padding: 8px 8px 8px 16px; /* Adjust the padding as needed */
   text-decoration: none;
-  font-size: 25px;
+  
   color: #818181;
   display: block;
 }
@@ -82,15 +84,38 @@ a:hover {
 
 .main {
   margin-left: 200px; /* Same as the width of the sidenav */
+  padding: 20px; /* Add padding to the main content area */
 }
 
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }
+
 
 /* side nav end */
 
+/* APP LOGO */
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.logo img {
+  width: 50px; /* Adjust the width of the logo as needed */
+  height: auto;
+  margin-right: 0px; /* Add spacing between the logo and text */
+}
 
 @keyframes App-logo-spin {
   from {

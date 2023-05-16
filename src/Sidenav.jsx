@@ -1,12 +1,17 @@
 import React from "react";
+import "./App.css"; // Import the CSS file for styling
+import logo from "./logo.svg"; // Import the logo image
 
 function Sidenav() {
   return (
     <div className="sidenav">
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
+      <div className="logo">
+        <img src={logo} alt="Logo" />
+        <a className="text-col" href="#">Showwcase Services</a>
+      </div>
+      
+      <a href="#">Discover</a>
+      <a href="#">Your Services</a>
     </div>
   );
 }
