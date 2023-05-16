@@ -125,9 +125,17 @@ a:hover {
 /* Add these styles to your CSS file */
 .center {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+.description {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #fff;
 }
 
 .neon-button {
@@ -142,6 +150,7 @@ a:hover {
   overflow: hidden;
   cursor: pointer;
   outline: none;
+  
 }
 
 .neon-button:before,
