@@ -221,8 +221,6 @@ a:hover {
   border-color: #78ee03;
 }
 
-
-
 .react-tagsinput-remove {
   cursor: pointer;
   font-weight: normal;
@@ -231,10 +229,6 @@ a:hover {
 .react-tagsinput-tag a::before {
   content: "x";
 }
-
-
-
-
 
 .service-form textarea.form-input {
   height: 100px;
@@ -258,6 +252,16 @@ a:hover {
 }
 
 /* FORM END */
+
+h2 {
+  margin-top: 20px;
+  color: #fff;
+}
+p{
+  margin-top: 20px;
+  color: #fff;
+}
+
 
 @keyframes neon-glow {
   0% {
