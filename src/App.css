@@ -82,19 +82,7 @@ a:hover {
   color: #f1f1f1;
 }
 
-.main {
-  margin-left: 200px; /* Same as the width of the sidenav */
-  padding: 20px; /* Add padding to the main content area */
-}
 
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-  .sidenav a {
-    font-size: 18px;
-  }
-}
 
 
 /* side nav end */
@@ -139,7 +127,7 @@ a:hover {
 }
 
 .neon-button {
-  padding: 12px 20px;
+  padding: 12px 200px;
   font-size: 16px;
   border: none;
   background-color: transparent;
@@ -150,7 +138,7 @@ a:hover {
   overflow: hidden;
   cursor: pointer;
   outline: none;
-  
+  border-radius: 5px;
 }
 
 .neon-button:before,
@@ -178,6 +166,90 @@ a:hover {
   animation: neon-flicker 2s ease-in-out infinite;
 }
 
+
+/* FORM START */
+
+.service-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px 150px;
+  border-radius: 8px;
+  background-color: #1c1c1e;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.service-form label {
+  font-weight: bold;
+  margin-top: 20px;
+  color: #fff;
+  margin-bottom: 20px;
+  
+}
+
+.service-form .form-input {
+  width: 100%;
+  padding:5px 200px 20px 5px;
+  font-size: 18px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: none;
+  background-color: #2d2d2d;
+  color: #fff;
+}
+
+.service-form textarea.form-input {
+  height: 100px;
+}
+
+.service-form button {
+  margin-top: 20px;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.service-form button:hover {
+  background-color: #00ff4c;
+  cursor: pointer;
+}
+
+
+/* TAGS */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+
+.skill-tag {
+  display: flex;
+  align-items: center;
+  background-color: #2d2d2d;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.remove-tag-button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+
+/* FORM END */
+
 @keyframes neon-glow {
   0% {
     box-shadow: 0 0 5px #00ff4c;
@@ -200,3 +272,69 @@ a:hover {
 }
 
 /* YOUR SERVICES PAGE END */
+
+
+/* Add responsive styles */
+
+/* Media query for screens smaller than 768px */
+@media screen and (max-width: 767px) {
+  /* Center the container on smaller screens */
+  .container {
+    align-items: center;
+  }
+  
+  /* Reduce the font size of the buttons */
+  .google-btn,
+  .github-btn,
+  .twitter-btn {
+    font-size: 14px;
+  }
+}
+
+/* Media query for screens smaller than 480px */
+@media screen and (max-width: 479px) {
+  /* Reduce the padding and margin of the buttons */
+  .google-btn,
+  .github-btn,
+  .twitter-btn {
+    padding: 10px 16px;
+    margin-bottom: 5px;
+  }
+  
+  /* Reduce the font size of the buttons */
+  .google-btn,
+  .github-btn,
+  .twitter-btn {
+    font-size: 12px;
+  }
+}
+
+/* Media query for screens smaller than 768px */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    width: 200px;
+    padding-top: 60px;
+  }
+
+  .main {
+    margin-left: 200px;
+  }
+}
+
+/* Media query for screens smaller than 480px */
+@media screen and (max-width: 479px) {
+  .sidenav {
+    width: 100%;
+    height: auto;
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    padding: 8px 16px;
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 10px;
+  }
+}
