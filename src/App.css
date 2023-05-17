@@ -288,6 +288,10 @@ a:hover {
   white-space: nowrap;
 }
 
+.service-title{
+  color: #000000;
+}
+
 .service-details {
   margin-bottom: 16px;
 }
@@ -297,6 +301,8 @@ a:hover {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+
 
 .edit-button {
   margin-top: 8px;
