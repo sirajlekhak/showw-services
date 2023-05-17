@@ -8,9 +8,11 @@ function Sidenav() {
     <div className="sidenav">
       <div className="logo">
         <img src={logo} alt="Logo" />
-        <a className="text-col" href="/">Showwcase Services</a>
+        <Link className="text-col" to="/">
+          Showwcase Services
+        </Link>{" "}
       </div>
-      
+
       <Link to="/DiscoverPage">Discover</Link>
       <Link to="/YourServices">Your Services</Link>
     </div>

@@ -1,15 +1,11 @@
-
-body{
+body {
   background-color: #101011;
-  
-  
 }
 
 /* Welcome to showwcase services start */
 
-h3{
+h3 {
   color: wheat;
-  
 }
 .App-link {
   color: #61dafb;
@@ -35,7 +31,7 @@ a {
 }
 
 .google-btn {
-  background-color: #DB4437;
+  background-color: #db4437;
 }
 
 .github-btn {
@@ -43,7 +39,7 @@ a {
 }
 
 .twitter-btn {
-  background-color: #1DA1F2;
+  background-color: #1da1f2;
 }
 
 i {
@@ -64,16 +60,15 @@ a:hover {
   left: 0;
   background-color: #000000;
   overflow-x: hidden;
-  
 }
-.sidenav .text-col{
+.sidenav .text-col {
   color: #f1f1f1;
 }
 
 .sidenav a {
   padding: 8px 8px 8px 16px; /* Adjust the padding as needed */
   text-decoration: none;
-  
+
   color: #818181;
   display: block;
 }
@@ -81,9 +76,6 @@ a:hover {
 .sidenav a:hover {
   color: #f1f1f1;
 }
-
-
-
 
 /* side nav end */
 
@@ -107,7 +99,6 @@ a:hover {
 /* APP LOGO END */
 
 /* YOUR SERVICES PAGE START*/
-
 
 /* Add these styles to your CSS file */
 /* Add these styles to your CSS file */
@@ -184,12 +175,11 @@ a:hover {
   margin-top: 20px;
   color: #fff;
   margin-bottom: 20px;
-  
 }
 
 .service-form .form-input {
   width: 100%;
-  padding:5px 200px 20px 5px;
+  padding: 5px 200px 20px 5px;
   font-size: 18px;
   margin-top: 5px;
   border-radius: 4px;
@@ -198,10 +188,9 @@ a:hover {
   color: #fff;
 }
 
-
-.tags-input-container{
+.tags-input-container {
   width: 100%;
-  padding:5px 200px 20px 5px;
+  padding: 5px 200px 20px 5px;
   font-size: 18px;
   margin-top: 5px;
   border-radius: 4px;
@@ -255,25 +244,6 @@ a:hover {
 
 /* CREATED USER START*/
 
-.created-user {
-  align-content: center;
-  justify-content: center;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  background-color: #f5f5f5;
-  margin-top: 1rem;
-  border-radius: 10px;
-}
-
-.created-user h2 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.created-user p {
-  margin: 0.5rem 0;
-  justify-content: center;
-}
 
 .edit-button {
   font-size: 1rem;
@@ -285,13 +255,66 @@ a:hover {
   color: #fff;
 }
 
+.top-left {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  margin-left: 290px;
+  padding: 0;
+  color: wheat;
+}
+
+.service-gallery {
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+  height: 700px;
+  width: 80%;
+  justify-content: center;
+  gap: 16px;
+}
+
+.service-container {
+  width: 300px;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.service-details {
+  margin-bottom: 16px;
+}
+
+.service-description {
+  max-height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.edit-button {
+  margin-top: 8px;
+}
+
+@media screen and (max-width: 600px) {
+  .service-container {
+    width: 100%;
+  }
+}
+
+
+
+
+
 
 /* CREATED USER END */
 
-
 /* EDIT DETAILS OF THE USER */
 
-.modal{
+.modal {
   border: 1px solid #ccc;
   padding: 1rem;
   background-color: #f5f5f5;
@@ -305,7 +328,8 @@ a:hover {
     box-shadow: 0 0 5px #00ff4c;
   }
   50% {
-    box-shadow: 0 0 20px #00ff4c, 0 0 40px #00ff4c, 0 0 60px #00ff4c, 0 0 80px #00ff4c;
+    box-shadow: 0 0 20px #00ff4c, 0 0 40px #00ff4c, 0 0 60px #00ff4c,
+      0 0 80px #00ff4c;
   }
   100% {
     box-shadow: 0 0 5px #00ff4c;
@@ -313,16 +337,28 @@ a:hover {
 }
 
 @keyframes neon-flicker {
-  0%, 19.999%, 22%, 62.999%, 64%, 85.999%, 92%, 92.999%, 100% {
+  0%,
+  19.999%,
+  22%,
+  62.999%,
+  64%,
+  85.999%,
+  92%,
+  92.999%,
+  100% {
     opacity: 0;
   }
-  20%, 21.999%, 63%, 63.999%, 86%, 91.999% {
+  20%,
+  21.999%,
+  63%,
+  63.999%,
+  86%,
+  91.999% {
     opacity: 1;
   }
 }
 
 /* YOUR SERVICES PAGE END */
-
 
 /* Add responsive styles */
 
@@ -332,7 +368,7 @@ a:hover {
   .container {
     align-items: center;
   }
-  
+
   /* Reduce the font size of the buttons */
   .google-btn,
   .github-btn,
@@ -350,7 +386,7 @@ a:hover {
     padding: 10px 16px;
     margin-bottom: 5px;
   }
-  
+
   /* Reduce the font size of the buttons */
   .google-btn,
   .github-btn,

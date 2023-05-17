@@ -1,7 +1,7 @@
 import React from "react";
 import Sidenav from "../Sidenav";
 
-function DiscoverPage({onClick}) {
+function DiscoverPage({ onClick }) {
   return (
     <div className="App">
       <Sidenav />

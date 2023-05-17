@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TagsInput from "react-tagsinput";
 import "react-tagsinput/react-tagsinput.css";
+import "./App.css";
 
 function CreateService({ onClick }) {
   const [showForm, setShowForm] = useState(false);
@@ -8,8 +9,10 @@ function CreateService({ onClick }) {
   const [description, setDescription] = useState("");
   const [skills, setSkills] = useState([]);
   const [price, setPrice] = useState("");
-  const [createdUser, setCreatedUser] = useState(null);
+  const [createdServices, setCreatedServices] = useState([]);
   const [editMode, setEditMode] = useState(false);
+  const [editIndex, setEditIndex] = useState(null);
+  const [isEditing, setIsEditing] = useState(false); // New state to track editing status
 
   const handleCreateService = () => {
     // Logic for creating a service goes here
@@ -18,43 +21,60 @@ function CreateService({ onClick }) {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    // Perform form submission logic here
     console.log("Form submitted");
 
-    // Create a user object
-    const user = {
+    const service = {
       title,
       description,
       skills,
       price,
     };
 
-    // Set the created user state
-    setCreatedUser(user);
+    if (editMode) {
+      setCreatedServices((prevServices) => {
+        const updatedServices = [...prevServices];
+        updatedServices[editIndex] = service;
+        return updatedServices;
+      });
+      setIsEditing(false); // Reset editing status after update
+    } else {
+      setCreatedServices((prevServices) => [...prevServices, service]);
+    }
 
-    // Reset form fields
     setTitle("");
     setDescription("");
     setSkills([]);
     setPrice("");
 
-    // Close the form
     setShowForm(false);
-  };
-
-  const handleEditDetails = () => {
-    setEditMode(true);
-  };
-
-  const handleUpdateDetails = () => {
     setEditMode(false);
-    // Perform update logic here
-    console.log("Details updated");
+    setEditIndex(null);
+  };
+
+  const handleEditDetails = (index) => {
+    setEditMode(true);
+    setEditIndex(index);
+    const { title, description, skills, price } = createdServices[index];
+    setTitle(title);
+    setDescription(description);
+    setSkills(skills);
+    setPrice(price);
+    setShowForm(true); // Show the form when editing details
+    setIsEditing(true); // Set editing status to true
+  };
+
+  const handleAddService = () => {
+    setShowForm(true);
+    setIsEditing(false);
+    setTitle("");
+    setDescription("");
+    setSkills([]);
+    setPrice("");
   };
 
   return (
     <div className="center">
-      {!showForm && !createdUser ? (
+      {!showForm && createdServices.length === 0 ? (
         <div>
           <p className="description">
             Create your first Service and start getting Leads $$$
@@ -93,84 +113,50 @@ function CreateService({ onClick }) {
                 className="tags-input-container"
                 tagClassName="tag"
                 removeButtonClassName="tag-remove-button"
-                inputProps={{ placeholder: "Enter skills separated by commas" }}
+                inputProps={{ placeholder: "Add relevant skills" }}
               />
 
               <label htmlFor="price">Price:</label>
               <input
-                type="number"
+                type="text"
                 id="price"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
                 className="form-input"
-                placeholder="Set the price for your service"
+                placeholder="Enter the price for your service"
               />
 
               <button type="submit" className="neon-button">
-                Create
+                {isEditing ? "Update Service" : "Create Service"}
               </button>
             </form>
           )}
 
-          {createdUser && (
-            <div className="created-user">
-              <h2>Created User:</h2>
-              <p>Title: {createdUser.title}</p>
-              <p>Description: {createdUser.description}</p>
-              <p>Skills:{createdUser.skills.join(", ")}</p>
-              <p>Price: {createdUser.price}</p>
-              <button onClick={handleEditDetails} className="edit-button">
-                Edit Details
-              </button>
-            </div>
-          )}
-          {editMode && (
-            <div className="modal">
-              <div className="modal-content">
-                <h2>Edit Details</h2>
-                <label htmlFor="title">Title:</label>
-                <input
-                  type="text"
-                  id="title"
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                  className="form-input"
-                  placeholder="Enter a catchy title for your service"
-                />
-
-                <label htmlFor="description">Description:</label>
-                <textarea
-                  id="description"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                  className="form-input"
-                  placeholder="Provide a detailed description of your service"
-                ></textarea>
-
-                <label htmlFor="skills">Skills:</label>
-                <TagsInput
-                  value={skills}
-                  onChange={(newSkills) => setSkills(newSkills)}
-                  className="tags-input-container"
-                  tagClassName="tag"
-                  removeButtonClassName="tag-remove-button"
-                  inputProps={{
-                    placeholder: "Enter skills separated by commas",
-                  }}
-                />
-
-                <label htmlFor="price">Price:</label>
-                <input
-                  type="number"
-                  id="price"
-                  value={price}
-                  onChange={(e) => setPrice(e.target.value)}
-                  className="form-input"
-                  placeholder="Set the price for your service"
-                />
-
-                <button onClick={handleUpdateDetails} className="neon-button">
-                  Update
+          {!showForm && (
+            <div className="service-gallery">
+              <h2 className="top-left">Your Services:</h2>
+              {createdServices.map((service, index) => (
+                <div key={index} className="service-container">
+                  <div className="service-details">
+                    <h3 className="service-title">{service.title}</h3>
+                    <p className="service-description">{service.description}</p>
+                    <div className="service-skills">
+                      <span className="skills-label">Skills:</span>{" "}
+                      {service.skills.join(", ")}
+                    </div>
+                    <p className="service-price">${service.price}</p>
+                  </div>
+                  <button
+                    className="edit-button"
+                    onClick={() => handleEditDetails(index)}
+                  >
+                    Edit Details
+                  </button>
+                </div>
+              ))}
+             <div className="add-service-container">
+                <button onClick={handleAddService} className="add-service-button">
+                  Add Service
                 </button>
               </div>
             </div>
