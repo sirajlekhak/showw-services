@@ -54,6 +54,7 @@ a:hover {
 /* NAV START */
 .sidenav {
   height: 100%;
+  width: 12%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -276,6 +277,8 @@ a:hover {
 
 .service-container {
   width: 300px;
+  height: 205px;
+  margin-top: 7rem;
   background-color: #fff;
   padding: 16px;
   border-radius: 8px;
@@ -298,6 +301,29 @@ a:hover {
 .edit-button {
   margin-top: 8px;
 }
+
+.add-service-button {
+  position: absolute;
+  top: 90px;
+  left: 10px;
+  margin-left: 290px;
+  padding: 0;
+  
+  background-color: #00ff4c;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.add-service-button:hover {
+  background-color: #00e344;
+  cursor: pointer;
+}
+
 
 @media screen and (max-width: 600px) {
   .service-container {
